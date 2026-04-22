@@ -1,0 +1,60 @@
+.hero-full {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hero-text {
+  text-align: center;
+  color: #fff;
+}
+
+.hero-text h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color: #fff; /* Blanco puro para contraste sobre video */
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+.btn-glass {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 15px 40px;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 2px;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-glass:hover {
+  background: rgba(255,255,255,0.3);
+}

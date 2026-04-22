@@ -1,0 +1,89 @@
+import React from 'react';
+import './ComoLlegar.css';
+
+function ComoLlegar() {
+  return (
+    <section className="llegar-section" id="contacto">
+      <div className="llegar-container">
+        <div className="llegar-header">
+          <span className="llegar-tag">GUÍA DE VIAJE</span>
+          <h2 className="llegar-title">Cómo llegar</h2>
+          <div className="sc-line" style={{ margin: '0 auto', maxWidth: '100px', height: '2px', background: '#D9C3A3' }}></div>
+        </div>
+
+        <div className="llegar-grid">
+          {/* BLOQUE: AUTOMÓVIL */}
+          <div className="llegar-card">
+            <div className="llegar-icon">🚘</div>
+            <h3 className="llegar-subtitle">En automóvil</h3>
+            <div className="ruta-item">
+              <strong>Desde CDMX:</strong>
+              <p>Anillo Periférico Norte hacia Naucalpan/Tlalnepantla. Salidas Gustavo Baz o Mario Colín. (30–50 min)</p>
+            </div>
+            <div className="ruta-item">
+              <strong>Desde Querétaro:</strong>
+              <p>Autopista México–Querétaro (57D). Salida en dirección a Tlalnepantla / Periférico Norte. (2–2.5 hrs)</p>
+            </div>
+            <div className="ruta-item">
+              <strong>Desde Toluca:</strong>
+              <p>Autopista hacia CDMX, conecta con Periférico Norte rumbo a Tlalnepantla. (1–1.5 hrs)</p>
+            </div>
+            <div className="glass-btn-container">
+              <a href="https://www.google.com/maps/dir//Tlalnepantla+de+Baz,+Edo.+de+M%C3%A9xico" target="_blank" rel="noreferrer" className="btn-glass-maps">
+                <span>VER RUTA EN AUTO</span>
+              </a>
+            </div>
+          </div>
+
+          {/* BLOQUE: TRANSPORTE PÚBLICO */}
+          <div className="llegar-card">
+            <div className="llegar-icon">🚆</div>
+            <h3 className="llegar-subtitle">Transporte Público</h3>
+            <div className="ruta-item">
+              <strong>Tren Suburbano:</strong>
+              <p>Aborda en Buenavista (CDMX) y baja en la estación Tlalnepantla. (25 min)</p>
+            </div>
+            <div className="ruta-item">
+              <strong>Metro + Bus:</strong>
+              <p>Llega a El Rosario (L6 y L7) y toma autobús o combi hacia el centro. (45–70 min)</p>
+            </div>
+            <div className="ruta-item">
+              <strong>Autobús:</strong>
+              <p>Salidas desde Indios Verdes u Observatorio. Opción económica y constante.</p>
+            </div>
+            <div className="glass-btn-container">
+              <a href="https://www.google.com/maps/search/Estacion+Tren+Suburbano+Tlalnepantla" target="_blank" rel="noreferrer" className="btn-glass-maps">
+                <span>UBICAR ESTACIONES</span>
+              </a>
+            </div>
+          </div>
+
+          {/* BLOQUE: AEROPUERTO Y APPS */}
+          <div className="llegar-card">
+            <div className="llegar-icon">✈️</div>
+            <h3 className="llegar-subtitle">Desde el Aeropuerto</h3>
+            <div className="ruta-item">
+              <strong>AICM (CDMX):</strong>
+              <p>Toma Circuito Interior y conecta con Periférico Norte. (40–60 min)</p>
+            </div>
+            <div className="ruta-item">
+              <strong>Servicios Digitales:</strong>
+              <p>Uber, Didi y taxis de sitio operan con normalidad hacia la zona norte.</p>
+            </div>
+            <div className="glass-btn-container">
+              <a href="https://www.google.com/maps/dir/AICM,+CDMX/Tlalnepantla" target="_blank" rel="noreferrer" className="btn-glass-maps">
+                <span>ABRIR EN GOOGLE MAPS</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer className="site-footer">
+        <p>© 2026 Tlalnepantla Turística • Daniel Arenas</p>
+      </footer>
+    </section>
+  );
+}
+
+export default ComoLlegar;

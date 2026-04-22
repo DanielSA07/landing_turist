@@ -1,0 +1,123 @@
+.gastronomia-section {
+  background-color: var(--verde-suave); /* 20% de la paleta */
+  padding: 100px 40px;
+}
+
+.gastronomia-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.gastronomia-header {
+  text-align: center;
+  margin-bottom: 70px;
+  color: #fff;
+}
+
+.gastronomia-tag {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.gastronomia-title {
+  font-size: 3rem;
+  margin: 10px 0;
+  color: #fff; /* Blanco para resaltar sobre el verde */
+}
+
+.gastronomia-intro {
+  font-weight: 300;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.gastronomia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.restaurante-card {
+  background-color: var(--beige-claro); /* Resalta sobre el fondo verde */
+  padding: 40px;
+  border-radius: 4px; /* Esquinas casi rectas para elegancia */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.restaurante-card:hover {
+  transform: translateY(-8px);
+}
+
+.rest-cat {
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: var(--arena-calido);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.rest-name {
+  color: var(--guinda-suave);
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.rest-desc {
+  font-size: 0.9rem;
+  color: var(--gris-calido);
+  margin-bottom: 25px;
+  flex-grow: 1; /* Empuja el link hacia abajo */
+}
+
+.rest-link {
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--guinda-suave);
+  letter-spacing: 1px;
+  border-bottom: 1px solid transparent;
+  width: fit-content;
+  transition: 0.3s;
+}
+
+.rest-link:hover {
+  border-bottom: 1px solid var(--guinda-suave);
+}
+
+.rest-link span {
+  margin-left: 5px;
+}
+
+.view-more-container-gastro {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.btn-view-more-gastro {
+  background: white; /* Resalta más sobre el verde suave de fondo */
+  border: none;
+  color: var(--guinda-suave);
+  padding: 15px 45px;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.btn-view-more-gastro:hover {
+  background: var(--guinda-suave);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}

@@ -1,0 +1,86 @@
+.welcome-section {
+  background-color: #ffffff;
+  padding: 120px 40px; /* Mucho aire para que se vea elegante */
+  display: flex;
+  justify-content: center;
+}
+
+.welcome-container {
+  max-width: 900px; /* Contenedor angosto para facilitar la lectura */
+  text-align: center;
+}
+
+.welcome-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  color: var(--arena-calido); /* Acento cultural */
+  display: block;
+  margin-bottom: 15px;
+}
+
+.welcome-title {
+  font-size: 2.8rem;
+  color: var(--guinda-suave); /* Título en guinda suave */
+  margin-bottom: 50px;
+  line-height: 1.2;
+}
+
+.p-highlight {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--gris-calido);
+  margin-bottom: 40px;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.welcome-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Texto en dos columnas como en revistas */
+  gap: 40px;
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+.welcome-grid p {
+  font-size: 0.95rem;
+  color: var(--gris-calido);
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.welcome-grid strong {
+  color: var(--guinda-suave);
+  font-weight: 600;
+}
+
+.welcome-footer {
+  margin-top: 40px;
+}
+
+.cta-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--gris-calido);
+  margin-bottom: 20px;
+}
+
+.accent-line {
+  width: 60px;
+  height: 2px;
+  background-color: var(--verde-suave); /* Detalle en verde suave */
+  margin: 0 auto;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+  .welcome-grid {
+    grid-template-columns: 1fr;
+  }
+  .welcome-title {
+    font-size: 2rem;
+  }
+}

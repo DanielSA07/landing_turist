@@ -1,0 +1,179 @@
+/* ComoLlegar.css */
+
+.llegar-section {
+  padding: 100px 40px;
+  background-color: #ffffff;
+}
+
+.llegar-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.llegar-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.llegar-tag {
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  color: var(--arena-calido);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.llegar-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: var(--guinda-suave);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Grid Principal */
+.llegar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Tarjetas */
+.llegar-card {
+  background-color: var(--beige-claro);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(217, 195, 163, 0.4);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.llegar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(111, 106, 100, 0.05);
+}
+
+.llegar-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.llegar-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--guinda-suave);
+  margin-bottom: 25px;
+}
+
+/* Items de Ruta */
+.ruta-item {
+  margin-bottom: 20px;
+}
+
+.ruta-item strong {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--guinda-suave);
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.ruta-item p {
+  font-size: 0.9rem;
+  color: var(--gris-calido);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   BOTÓN ESTILO CRISTAL (GLASSMORPHISM)
+   ============================================================ */
+.glass-btn-container {
+  margin-top: auto; /* Empuja el botón al final de la card */
+  padding-top: 20px;
+}
+
+.btn-glass-maps {
+  position: relative;
+  display: block;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  background: rgba(140, 74, 90, 0.08); /* Fondo guinda traslúcido */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(140, 74, 90, 0.2);
+  border-radius: 12px;
+  color: var(--guinda-suave);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: all 0.4s ease;
+  overflow: hidden; /* Necesario para el efecto de brillo */
+}
+
+.btn-glass-maps:hover {
+  background: rgba(140, 74, 90, 0.15);
+  transform: translateY(-3px);
+  border: 1px solid rgba(140, 74, 90, 0.4);
+  box-shadow: 0 10px 20px rgba(140, 74, 90, 0.1);
+}
+
+/* Efecto de Brillo (Flash de luz al pasar el mouse) */
+.btn-glass-maps::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.6), 
+    transparent
+  );
+  transform: rotate(35deg);
+  transition: 0.7s;
+}
+
+.btn-glass-maps:hover::after {
+  left: 130%;
+}
+
+/* ============================================================
+   FOOTER & RESPONSIVO
+   ============================================================ */
+.site-footer {
+  margin-top: 100px;
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding-top: 40px;
+}
+
+.site-footer p {
+  font-size: 0.75rem;
+  color: var(--gris-calido);
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1024px) {
+  .llegar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .llegar-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .llegar-section {
+    padding: 60px 20px;
+  }
+
+  .llegar-title {
+    font-size: 2.2rem;
+  }
+}
