@@ -14,7 +14,9 @@ function ComoLlegar() {
         <div className="llegar-grid">
           {/* BLOQUE: AUTOMÓVIL */}
           <div className="llegar-card">
-            <div className="llegar-icon">🚘</div>
+            <div className="llegar-icon">
+              <img src="./coche.png" alt="coche" />
+            </div>
             <h3 className="llegar-subtitle">En automóvil</h3>
             <div className="ruta-item">
               <strong>Desde CDMX:</strong>
@@ -37,7 +39,9 @@ function ComoLlegar() {
 
           {/* BLOQUE: TRANSPORTE PÚBLICO */}
           <div className="llegar-card">
-            <div className="llegar-icon">🚆</div>
+            <div className="llegar-icon">
+              <img src="./tren.png" alt="tren" />
+            </div>
             <h3 className="llegar-subtitle">Transporte Público</h3>
             <div className="ruta-item">
               <strong>Tren Suburbano:</strong>
@@ -60,7 +64,9 @@ function ComoLlegar() {
 
           {/* BLOQUE: AEROPUERTO Y APPS */}
           <div className="llegar-card">
-            <div className="llegar-icon">✈️</div>
+            <div className="llegar-icon">
+              <img src="./avion.png" alt="avion" />
+            </div>
             <h3 className="llegar-subtitle">Desde el Aeropuerto</h3>
             <div className="ruta-item">
               <strong>AICM (CDMX):</strong>

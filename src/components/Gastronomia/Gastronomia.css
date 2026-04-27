@@ -1,6 +1,9 @@
+/* Gastronomia.css */
+
 .gastronomia-section {
   background-color: var(--verde-suave); /* 20% de la paleta */
   padding: 100px 40px;
+  overflow: hidden;
 }
 
 .gastronomia-container {
@@ -12,6 +15,9 @@
   text-align: center;
   margin-bottom: 70px;
   color: #fff;
+  /* Estado inicial para animación */
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .gastronomia-tag {
@@ -22,9 +28,10 @@
 }
 
 .gastronomia-title {
+  font-family: var(--font-secondary);
   font-size: 3rem;
   margin: 10px 0;
-  color: #fff; /* Blanco para resaltar sobre el verde */
+  color: #fff;
 }
 
 .gastronomia-intro {
@@ -40,16 +47,21 @@
 }
 
 .restaurante-card {
-  background-color: var(--beige-claro); /* Resalta sobre el fondo verde */
+  background-color: var(--beige-claro);
   padding: 40px;
-  border-radius: 4px; /* Esquinas casi rectas para elegancia */
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Estado inicial para animación */
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: opacity, transform;
 }
 
 .restaurante-card:hover {
   transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
 .rest-cat {
@@ -62,6 +74,7 @@
 }
 
 .rest-name {
+  font-family: var(--font-secondary);
   color: var(--guinda-suave);
   font-size: 1.6rem;
   margin-bottom: 15px;
@@ -72,7 +85,7 @@
   font-size: 0.9rem;
   color: var(--gris-calido);
   margin-bottom: 25px;
-  flex-grow: 1; /* Empuja el link hacia abajo */
+  flex-grow: 1;
 }
 
 .rest-link {
@@ -94,14 +107,18 @@
   margin-left: 5px;
 }
 
+/* Contenedor del botón con animación */
 .view-more-container-gastro {
   display: flex;
   justify-content: center;
   margin-top: 60px;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
+/* Estilos originales del botón restaurados */
 .btn-view-more-gastro {
-  background: white; /* Resalta más sobre el verde suave de fondo */
+  background: white; 
   border: none;
   color: var(--guinda-suave);
   padding: 15px 45px;
@@ -120,4 +137,36 @@
   color: white;
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ============================================================
+   LÓGICA DE ANIMACIONES (REVEAL)
+   ============================================================ */
+
+@keyframes fadeInUpGastro {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-gastro {
+  animation: fadeInUpGastro 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+/* Delays para el escalonado */
+.delay-1 { animation-delay: 0.1s; }
+.delay-5 { animation-delay: 0.8s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gastronomia-section {
+    padding: 60px 20px;
+  }
+  .gastronomia-title {
+    font-size: 2.2rem;
+  }
+  .restaurante-card {
+    padding: 30px;
+  }
 }

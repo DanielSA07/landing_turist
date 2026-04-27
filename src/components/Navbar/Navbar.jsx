@@ -7,7 +7,9 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <div className="nav-logo">TLALNEPANTLA <span>TURÍSTICA</span></div>
+        <div className="nav-logo">
+          <img src="./logo.png" alt="Visita Tlane" />
+        </div>
         
         {/* Icono Hamburguesa */}
         <div className="nav-mobile-icon" onClick={() => setIsOpen(!isOpen)}>

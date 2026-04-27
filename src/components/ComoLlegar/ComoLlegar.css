@@ -24,7 +24,7 @@
 }
 
 .llegar-title {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-secondary);
   font-size: 3rem;
   color: var(--guinda-suave);
   margin-top: 10px;
@@ -57,10 +57,14 @@
 .llegar-icon {
   font-size: 2.5rem;
   margin-bottom: 20px;
+
+  img{
+    width: 4rem;
+  }
 }
 
 .llegar-subtitle {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-secondary);
   font-size: 1.8rem;
   color: var(--guinda-suave);
   margin-bottom: 25px;

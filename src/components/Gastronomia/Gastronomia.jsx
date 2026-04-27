@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Gastronomia.css';
 
 const restaurantes = [
@@ -21,14 +21,31 @@ const restaurantes = [
 
 function Gastronomia() {
   const [showAll, setShowAll] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
-  // Mostramos solo 6 (2 filas de 3) al inicio
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -80px 0px" }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   const visibles = showAll ? restaurantes : restaurantes.slice(0, 6);
+  const revealClass = isVisible ? "reveal-gastro" : "";
 
   return (
-    <section className="gastronomia-section" id="gastronomia">
+    <section className="gastronomia-section" id="gastronomia" ref={sectionRef}>
       <div className="gastronomia-container">
-        <div className="gastronomia-header">
+        <div className={`gastronomia-header ${revealClass} delay-1`}>
           <span className="gastronomia-tag">EXPERIENCIA CULINARIA</span>
           <h2 className="gastronomia-title">Dónde comer</h2>
           <p className="gastronomia-intro">Tlalnepantla ofrece una gran variedad de opciones para todos los gustos.</p>
@@ -36,7 +53,11 @@ function Gastronomia() {
 
         <div className="gastronomia-grid">
           {visibles.map((rest, index) => (
-            <div key={index} className="restaurante-card">
+            <div 
+              key={index} 
+              className={`restaurante-card ${revealClass}`}
+              style={{ animationDelay: isVisible ? `${0.2 + (index * 0.1)}s` : '0s' }}
+            >
               <span className="rest-cat">{rest.cat}</span>
               <h3 className="rest-name">{rest.nombre}</h3>
               <p className="rest-desc">{rest.desc}</p>
@@ -47,7 +68,7 @@ function Gastronomia() {
           ))}
         </div>
 
-        <div className="view-more-container-gastro">
+        <div className={`view-more-container-gastro ${revealClass} delay-5`}>
           <button className="btn-view-more-gastro" onClick={() => setShowAll(!showAll)}>
             {showAll ? "MOSTRAR MENOS" : "VER MÁS RESTAURANTES"}
           </button>

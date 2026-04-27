@@ -1,18 +1,55 @@
+/* 1. DECLARACIÓN DE FUENTES LOCALES */
+/* Ajusta el nombre del archivo 'fuente-titulo.woff2' al nombre real que tengas */
+@font-face {
+  font-family: 'Montserrat'; 
+  src: url('../public/Montserrat-Medium.ttf') format('ttf'),
+       url('../public/Montserrat-Medium.ttf') format('ttf');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Eras';
+  src: url('../public/eras-itc-demi.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --guinda-suave: #8C4A5A;
   --beige-claro: #F2EDE6;
   --gris-calido: #6F6A64;
   --arena-calido: #D9C3A3;
   --verde-suave: #7D8C7B;
+  
+  /* Variables de fuente para fácil mantenimiento */
+  --font-primary: 'Eras', serif;
+  --font-secondary: 'Montserrat', sans-serif;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; color: var(--gris-calido); }
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body {
+  font-family: var(--font-secondary);
+  color: var(--gris-calido);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Aplicación automática a encabezados */
+h1, h2, h3, .hero-title, .llegar-title {
+  font-family: var(--font-primary);
+}
 
 /* --- GRID RESPONSIVO GENERAL --- */
 .sc-grid, .gastronomia-grid, .atractivos-grid, .llegar-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Desktop */
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
@@ -27,7 +64,7 @@ body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; color: var(--g
 /* --- MÓVILES --- */
 @media (max-width: 768px) {
   .sc-grid, .gastronomia-grid, .atractivos-grid, .llegar-grid {
-    grid-template-columns: 1fr; /* Una sola columna */
+    grid-template-columns: 1fr;
   }
 
   .tabs-header {
@@ -39,12 +76,18 @@ body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; color: var(--g
     width: 100%;
     border: 1px solid var(--arena-calido);
     padding: 12px;
+    font-family: var(--font-secondary); /* Fuente de cuerpo para botones */
+    font-weight: 700;
   }
 
-  .tab-btn.active::after { display: none; }
-  .tab-btn.active { background: var(--guinda-suave); color: white; }
+  .tab-btn.active { 
+    background: var(--guinda-suave); 
+    color: white; 
+  }
 
-  .hero-title { font-size: 2.5rem !important; }
+  .hero-title { 
+    font-size: 2.5rem !important; 
+  }
 }
 
 /* --- ESTILOS DE BOTONES COMUNES --- */
@@ -60,7 +103,9 @@ body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; color: var(--g
   color: var(--guinda-suave);
   padding: 12px 30px;
   border-radius: 50px;
+  font-family: var(--font-secondary);
   font-weight: 700;
+  letter-spacing: 1px;
   cursor: pointer;
   transition: 0.3s;
 }

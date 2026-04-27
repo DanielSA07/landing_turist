@@ -2,7 +2,8 @@
 
 .atractivos-section {
   padding: 100px 40px;
-  background-color: var(--beige-claro); /* Fondo base del 60% */
+  background-color: var(--beige-claro);
+  overflow: hidden;
 }
 
 .atractivos-container {
@@ -18,6 +19,9 @@
   margin-bottom: 70px;
   border-bottom: 1px solid var(--arena-calido);
   padding-bottom: 25px;
+  /* Estado inicial para la animación */
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .tab-btn {
@@ -39,7 +43,6 @@
   color: var(--guinda-suave);
 }
 
-/* Indicador de pestaña activa */
 .tab-btn.active {
   color: var(--guinda-suave);
 }
@@ -47,7 +50,7 @@
 .tab-btn.active::after {
   content: '';
   position: absolute;
-  bottom: -26px; /* Ajustado para quedar sobre la línea del borde */
+  bottom: -26px;
   left: 0;
   width: 100%;
   height: 3px;
@@ -59,45 +62,18 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 35px;
-  animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Animación sutil al cambiar de pestaña */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 768px) {
-  .tabs-header {
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .tab-btn {
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-  }
-  
-  .atractivos-section {
-    padding: 60px 20px;
-  }
-}
-
-/* Reutilización de estilos de tarjeta para consistencia */
 .sc-card {
   background: #ffffff;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(111, 106, 100, 0.1);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  /* Estado inicial para la animación */
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: opacity, transform;
 }
 
 .sc-card:hover {
@@ -135,7 +111,7 @@
 
 .sc-name {
   color: var(--gris-calido);
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-secondary);
   font-size: 1.6rem;
   margin-bottom: 12px;
   line-height: 1.2;
@@ -184,6 +160,9 @@
   display: flex;
   justify-content: center;
   margin-top: 50px;
+  /* Estado inicial para la animación */
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .btn-view-more-atractivos {
@@ -205,4 +184,38 @@
   color: white;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(140, 74, 90, 0.2);
+}
+
+/* ============================================================
+   ANIMACIONES ELEGANTES
+   ============================================================ */
+
+@keyframes fadeInUpAtractivos {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-atractivos {
+  animation: fadeInUpAtractivos 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-5 { animation-delay: 0.8s; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .tabs-header {
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .tab-btn {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+  .atractivos-section {
+    padding: 60px 20px;
+  }
 }

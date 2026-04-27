@@ -1,27 +1,39 @@
 .welcome-section {
   background-color: #ffffff;
-  padding: 120px 40px; /* Mucho aire para que se vea elegante */
+  padding: 120px 40px;
   display: flex;
   justify-content: center;
 }
 
 .welcome-container {
-  max-width: 900px; /* Contenedor angosto para facilitar la lectura */
+  max-width: 900px;
   text-align: center;
+}
+
+/* ESTADO INICIAL: Todos los elementos animados empiezan invisibles */
+.welcome-tag,
+.welcome-title,
+.p-highlight,
+.welcome-grid,
+.cta-text {
+  opacity: 0;
+  transform: translateY(25px); /* Un poco más de desplazamiento para que se note el scroll */
+  will-change: opacity, transform;
 }
 
 .welcome-tag {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.75rem;
   letter-spacing: 4px;
-  color: var(--arena-calido); /* Acento cultural */
+  color: var(--arena-calido);
   display: block;
   margin-bottom: 15px;
 }
 
 .welcome-title {
+  font-family: var(--font-secondary);
   font-size: 2.8rem;
-  color: var(--guinda-suave); /* Título en guinda suave */
+  color: var(--guinda-suave);
   margin-bottom: 50px;
   line-height: 1.2;
 }
@@ -37,7 +49,7 @@
 
 .welcome-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Texto en dos columnas como en revistas */
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
   text-align: left;
   margin-bottom: 60px;
@@ -69,18 +81,40 @@
 }
 
 .accent-line {
-  width: 60px;
+  width: 0; /* Empieza en cero para la animación */
   height: 2px;
-  background-color: var(--verde-suave); /* Detalle en verde suave */
+  background-color: var(--verde-suave);
   margin: 0 auto;
 }
 
-/* Responsivo para móviles */
+/* ANIMACIONES */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: fadeInUp 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.5s; }
+.delay-4 { animation-delay: 0.7s; }
+.delay-5 { animation-delay: 0.9s; }
+
+@keyframes growLine {
+  to { width: 60px; }
+}
+
+.animate-line {
+  animation: growLine 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  animation-delay: 1.1s;
+}
+
 @media (max-width: 768px) {
-  .welcome-grid {
-    grid-template-columns: 1fr;
-  }
-  .welcome-title {
-    font-size: 2rem;
-  }
+  .welcome-grid { grid-template-columns: 1fr; }
+  .welcome-title { font-size: 2rem; }
 }
