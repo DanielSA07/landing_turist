@@ -6,27 +6,29 @@ function Welcome() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
+    // CORRECCIÓN: Guardamos la referencia actual en una variable local
+    const currentRef = sectionRef.current;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Solo activamos cuando entra en el viewport
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Una vez que se anima, dejamos de observar para mejorar el performance
           observer.unobserve(entry.target);
         }
       },
       {
-        threshold: 0.15, // Se activa cuando el 15% es visible
-        rootMargin: "0px 0px -80px 0px" // Retrasa la activación 80px para que el usuario ya esté viendo la zona
+        threshold: 0.15,
+        rootMargin: "0px 0px -80px 0px"
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (sectionRef.current) {
+      // Usamos la variable local para desconectar de forma segura
+      if (currentRef) {
         observer.disconnect();
       }
     };
