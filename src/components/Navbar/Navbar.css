@@ -47,7 +47,7 @@
 
 .nav-links a {
   text-decoration: none;
-  color: var(--gris-calido);
+  color: var(--beige-claro);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -55,7 +55,7 @@
 }
 
 .nav-links a:hover {
-  color: var(--guinda-suave);
+  color: var(--arena-calido);
 }
 
 /* --- RESPONSIVO MÓVIL --- */
