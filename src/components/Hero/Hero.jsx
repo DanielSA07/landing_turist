@@ -4,9 +4,8 @@ import './Hero.css';
 function Hero() {
   const videoId = "MoCeBqh6EFk";
 
-  // Agregamos mute=1 explícitamente (los navegadores bloquean el autoplay con sonido)
-  // y nos aseguramos de que el loop funcione correctamente con playlist.
-  const videoSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&rel=0&iv_load_policy=3&enablejsapi=1&modestbranding=1&playsinline=1&showinfo=0`;
+  // Mantenemos mute=1, autoplay=1 y playsinline=1 como prioridad
+  const videoSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&rel=0&iv_load_policy=3&enablejsapi=1&modestbranding=1&playsinline=1`;
 
   return (
     <header className="hero-full">
@@ -14,11 +13,12 @@ function Hero() {
         <iframe
           className="video-bg-iframe"
           src={videoSrc}
-          // Cambiamos el título para que sea único y evitar errores de accesibilidad
           title="Video de fondo de Tlalnepantla"
           frameBorder="0"
-          // CRÍTICO: Añadimos 'allow="autoplay"' para que el navegador de permiso al iframe
-          allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          // AJUSTE CRÍTICO: Añadimos 'autoplay' y 'fullscreen' explícitos en allow
+          allow="autoplay; fullscreen; accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          // Evitamos que el usuario interactúe con el iframe en mobile
+          style={{ pointerEvents: 'none' }}
           tabIndex="-1"
         ></iframe>
       </div>

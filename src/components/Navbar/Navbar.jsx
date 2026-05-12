@@ -8,22 +8,20 @@ function Navbar() {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-logo">
-          <img src="./logo.png" alt="Visita Tlane" />
-        </div>
-        
-        {/* Icono Hamburguesa */}
-        <div className="nav-mobile-icon" onClick={() => setIsOpen(!isOpen)}>
-          <div className={isOpen ? "line open" : "line"}></div>
-          <div className={isOpen ? "line open" : "line"}></div>
-          <div className={isOpen ? "line open" : "line"}></div>
+          <img src="/logo.png" alt="Logo Tlalnepantla" />
         </div>
 
-        {/* Links del Menú */}
-        <ul className={`nav-links ${isOpen ? "active" : ""}`}>
-          <li><a href="#atractivos" onClick={() => setIsOpen(false)}>Atractivos</a></li>
-          <li><a href="#gastronomia" onClick={() => setIsOpen(false)}>Gastronomía</a></li>
-          <li><a href="#hoteles" onClick={() => setIsOpen(false)}>Hospedaje</a></li>
-          <li><a href="#contacto" onClick={() => setIsOpen(false)}>Cómo llegar</a></li>
+        <div className={`nav-mobile-icon ${isOpen ? 'open' : ''}`} onClick={() => setIsOpen(!isOpen)}>
+          <div className={`line ${isOpen ? 'open' : ''}`}></div>
+          <div className={`line ${isOpen ? 'open' : ''}`}></div>
+          <div className={`line ${isOpen ? 'open' : ''}`}></div>
+        </div>
+
+        <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
+          <li><a href="#inicio" onClick={() => setIsOpen(false)}>INICIO</a></li>
+          <li><a href="#historia" onClick={() => setIsOpen(false)}>HISTORIA</a></li>
+          <li><a href="#experiencias" onClick={() => setIsOpen(false)}>EXPERIENCIAS</a></li>
+          <li><a href="#contacto" onClick={() => setIsOpen(false)}>CONTACTO</a></li>
         </ul>
       </div>
     </nav>
