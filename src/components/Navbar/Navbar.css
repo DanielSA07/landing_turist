@@ -44,7 +44,7 @@
 
 .nav-links a {
   text-decoration: none;
-  color: #f5f5dc; /* Suponiendo tu variable --beige-claro */
+  color: #D9C3A3; /* Suponiendo tu variable --beige-claro */
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -52,7 +52,7 @@
 }
 
 .nav-links a:hover {
-  color: #d2b48c; /* Suponiendo tu variable --arena-calido */
+  color: #8C4A5A; /* Suponiendo tu variable --arena-calido */
 }
 
 /* --- RESPONSIVO MÓVIL --- */

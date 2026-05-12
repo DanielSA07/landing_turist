@@ -8,7 +8,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-logo">
-          <img src="/logo.png" alt="Logo Tlalnepantla" />
+          <img src="/VISITA.png" alt="Logo Tlalnepantla" />
         </div>
 
         <div className={`nav-mobile-icon ${isOpen ? 'open' : ''}`} onClick={() => setIsOpen(!isOpen)}>
@@ -21,7 +21,7 @@ function Navbar() {
           <li><a href="#inicio" onClick={() => setIsOpen(false)}>INICIO</a></li>
           <li><a href="#historia" onClick={() => setIsOpen(false)}>HISTORIA</a></li>
           <li><a href="#experiencias" onClick={() => setIsOpen(false)}>EXPERIENCIAS</a></li>
-          <li><a href="#contacto" onClick={() => setIsOpen(false)}>CONTACTO</a></li>
+          <li><a href="#contacto" onClick={() => setIsOpen(false)}>¿COMO LLEGAR?</a></li>
         </ul>
       </div>
     </nav>
