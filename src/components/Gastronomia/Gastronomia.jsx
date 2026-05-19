@@ -5,7 +5,7 @@ const restaurantes = [
   { nombre: "Restaurante El Bajío", desc: "Cocina mexicana tradicional con recetas caseras y sabor auténtico.", link: "https://elbajio.com.mx", cat: "Tradicional" },
   { nombre: "La Mansión Satélite", desc: "Especialistas en cortes de carne, ideal para comidas formales.", link: "https://lamansion.com.mx", cat: "Cortes" },
   { nombre: "Los Arcos", desc: "Mariscos frescos en un ambiente familiar y relajado.", link: "https://losarcosrestaurante.com", cat: "Mariscos" },
-  { nombre: "Vips Plaza Satélite", desc: "Opción accesible con menú variado, rápida y económica.", link: "https://vips.com.mx", cat: "Familiar" },
+  { nombre: "Sonora Grill - Mundo e", desc: "Donde la tradición culinaria de Sonora Grill se fusiona con la pasión por la carne de primera calidad.", link: "https://sonoragrill.com.mx/sonora-grill-mundo-e/", cat: "Familiar" },
   { nombre: "Casa Ávila", desc: "Cocina contemporánea con influencia del Golfo y ambiente selecto.", link: "https://grupoavila.mx", cat: "Contemporánea" },
   { nombre: "El Villano", desc: "Fusión sonorense y chilanga con toque gourmet y mixología.", link: "https://el-villano-cocina-de-brasa.goto-where.com/", cat: "Fusión" },
   { nombre: "Cocina de Hacienda", desc: "Gastronomía mexicana auténtica con hospitalidad excepcional.", link: "https://cocinadehacienda.mx/", cat: "Hacienda" },
