@@ -148,30 +148,79 @@
 }
 
 /* ============================================================
-   FOOTER & RESPONSIVO
+   FOOTER & RESPONSIVO CORREGIDO
    ============================================================ */
 .site-footer {
+  width: 100%;
+  min-height: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  /* Ajuste de fondo completo sin cortes */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), url('/public/COLIBRI.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  border-top: 1px solid rgba(217, 195, 163, 0.3);
   padding: 40px 0;
-  background: rgba(255, 255, 255, 0.05);
-  /* Efecto cristal sutil */
+  margin: 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row; /* Alinea icono y texto lado a lado en horizontal */
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Espacio exacto entre el icono y la tipografía */
 }
 
 .social-link-fb {
-  transition: transform 0.3s ease, filter 0.3s ease;
   display: flex;
   align-items: center;
+  text-decoration: none; /* Elimina cualquier subrayado residual */
+  transition: transform 0.3s ease;
   justify-content: space-around;
-  width: 24%;
-  color: var(--guinda-suave);
-  text-decoration: none;
 }
 
 .social-link-fb:hover {
   transform: scale(1.1);
-  filter: brightness(1.2);
+}
+
+.footer-text {
+  color: #8C4A5A;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-decoration: none; /* Quita el subrayado por completo */
+}
+
+@media (max-width: 1024px) {
+  .llegar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .llegar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .llegar-section {
+    padding: 60px 20px;
+  }
+
+  .llegar-title {
+    font-size: 2.2rem;
+  }
+
+  /* En móviles muy chicos, si no caben juntos, se apilan centrados */
+  .footer-content {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 @media (max-width: 1024px) {
