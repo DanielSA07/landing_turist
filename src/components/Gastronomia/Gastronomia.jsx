@@ -2,21 +2,21 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Gastronomia.css';
 
 const restaurantes = [
-  { nombre: "Restaurante El Bajío", desc: "Cocina mexicana tradicional con recetas caseras y sabor auténtico.", link: "https://elbajio.com.mx", cat: "Tradicional" },
-  { nombre: "La Mansión Satélite", desc: "Especialistas en cortes de carne, ideal para comidas formales.", link: "https://lamansion.com.mx", cat: "Cortes" },
-  { nombre: "Los Arcos", desc: "Mariscos frescos en un ambiente familiar y relajado.", link: "https://losarcosrestaurante.com", cat: "Mariscos" },
-  { nombre: "Sonora Grill - Mundo e", desc: "Donde la tradición culinaria de Sonora Grill se fusiona con la pasión por la carne de primera calidad.", link: "https://sonoragrill.com.mx/sonora-grill-mundo-e/", cat: "Familiar" },
-  { nombre: "Casa Ávila", desc: "Cocina contemporánea con influencia del Golfo y ambiente selecto.", link: "https://grupoavila.mx", cat: "Contemporánea" },
-  { nombre: "El Villano", desc: "Fusión sonorense y chilanga con toque gourmet y mixología.", link: "https://el-villano-cocina-de-brasa.goto-where.com/", cat: "Fusión" },
-  { nombre: "Cocina de Hacienda", desc: "Gastronomía mexicana auténtica con hospitalidad excepcional.", link: "https://cocinadehacienda.mx/", cat: "Hacienda" },
-  { nombre: "El Rincón de los Morales", desc: "Desayunos y cenas con espacios ideales para reuniones.", link: "https://d795pv59rkpoi.cloudfront.net/index.html#hungry-top", cat: "Eventos" },
-  { nombre: "Las Medulitas", desc: "Un lugar grandioso para disfrutar de maravillosa cocina mexicana.", link: "https://www.facebook.com/profile.php?id=100055656500519#", cat: "Regional" },
-  { nombre: "El Bife del Padrino", desc: "Cortes a la parrilla y sabores que abrazan tu paladar.", link: "https://restaurantes.grupobifedelpadrino.com/menu-tlalnepantla/", cat: "Cortes" },
-  { nombre: "Correo Mayor", desc: "Tradicional mezcla de comida mexicana, española e internacional.", link: "https://www.facebook.com/RestauranteCorreoMayor/", cat: "Internacional" },
-  { nombre: "Chalet Suizo", desc: "Cocina fusion europea y mexicana con especialidades suizas.", link: "https://www.chaletsuizo.net/", cat: "Fusión Europea" },
-  { nombre: "La Vid Argentina", desc: "Toda la experiencia de un auténtico restaurante argentino.", link: "https://www.lavidargentina.com/", cat: "Cortes" },
-  { nombre: "Casa Lino", desc: "Deliciosos platillos y la mejor selección de bebidas.", link: "https://www.facebook.com/RestauranteBarLino/", cat: "Bar & Grill" },
-  { nombre: "El Ranchito de Yulay", desc: "Ambiente acogedor, servicio rápido y precios accesibles.", link: "https://www.instagram.com/elranchitodeyulay/", cat: "Familiar" }
+  { nombre: "El Ranchito de Yulay", desc: "Ambiente acogedor, servicio rápido y precios accesibles.", link: "https://www.facebook.com/ElRanchitoDeYulay/", cat: "Familiar" },
+  { nombre: "Astroboy", desc: "El mejor sabor de la galaxia.", link: "https://bio.link/soyastroboy/", cat: "Familiar" },
+  { nombre: "Asador Mestizo", desc: "Su cocina mexicana atrae a clientes a la búsqueda de algo distinto", link: "https://es.restaurantguru.com/El-Guiso-Mestizo-Tlalnepantla", cat: "Mexicana" },
+  { nombre: "Las Arracheras y algo más...", desc: "¡Somos expertos en la parrilla!", link: "https://lasarracheras.com/", cat: "Cortes" },
+  { nombre: "La Grange Churrascaría", desc: "La experiencia culinaria conocida como rodizio brasileño, es una danza de sabores que se desarrolla al ritmo de las brasas.", link: "https://lagrangechurrascaria.com/", cat: "Cortes" },
+  { nombre: "Mol, Cocina Tradicional Mexicana", desc: "MOL es un tributo a la gastronomía mexicana por lo que disfrutarán de una experiencia culinaria llena de sabores, texturas y aromas mostrando el amor por México a través de nuestro amplio menú.", link: "https://molrestaurante.com/", cat: "Mexicana" },
+  { nombre: "Casa Tinacal", desc: "Explora aquí el universo de la cocina mexicana.", link: "https://es.restaurantguru.com/Tinacal-Gustavo-Baz-Tlane-Tlalnepantla", cat: "Mexicana" },
+  { nombre: "El Villano, Cocina de Brasa", desc: "Se distingue por su excepcional experiencia gastronómica.", link: "https://el-villano-cocina-de-brasa.goto-where.com/", cat: "Brasa" },
+  { nombre: "CAÑA, Cocina de Mar", desc: "Mariscos frescos & cocina de autor. Sabor del Pacífico con alma mexicana", link: "https://www.instagram.com/cana.cocinademar/?hl=es-la", cat: "Mariscos" },
+  { nombre: "Flama", desc: "Una experiencia que va más allá del sabor. Aquí, los ingredientes cuentan historias, el servicio fluye como un ritual, y cada visita es un momento que se queda contigo.", link: "https://culinariocoronado.com/flamarestaurante/", cat: "Familiar" },
+  { nombre: "La Queretana", desc: "Todos nuestros platillos son del día presentados en tortilla hecha a mano.", link: "https://www.facebook.com/people/La-Queretana/100069537734853/?mibextid=wwXIfr&rdid=bqiRZVnB0gS5JKQi&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18cWde6sEm%2F%3Fmibextid%3DwwXIfr", cat: "Mexicana" },
+  { nombre: "Restaurante Bar Lino", desc: "Ven y disfruta con nosotros nuestros deliciosos platillos y de la mejor selección de bebidas que tenemos preparadas para ti.", link: "https://www.facebook.com/RestauranteBarLino?mibextid=wwXIfr&rdid=vuSm0DX06BnUZKV9&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1arNMsKbsV%2F%3Fmibextid%3DwwXIfr#", cat: "Restaurante & Bar" },
+  { nombre: "Las Memelas de la Rana", desc: "Disfruta en familia o amigos de las tradicionales Memelas de la Rana. También de los antojitos Mexicanos", link: "https://www.instagram.com/las_memelas/?hl=es", cat: "Mexicana" },
+  { nombre: "Navia Café", desc: "Disfruta de Desayuno, Almuerzo, Brunch, Bebidas.", link: "https://www.facebook.com/share/1DyUSx9Spp/?mibextid=wwXIfr", cat: "Familiar" },
+  { nombre: "Culinario Coronado", desc: "Cocina estacional elaborada con ingredientes de pequeños productores de diversas regiones de nuestro país ", link: "https://culinariocoronado.com/quienes-somos/#Artes%20culinario", cat: "Familiar" },
 ];
 
 function Gastronomia() {

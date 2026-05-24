@@ -37,7 +37,7 @@ function Welcome() {
   const revealClass = isVisible ? "reveal" : "";
 
   return (
-    <section className="welcome-section" ref={sectionRef}>
+    <section className="welcome-section" ref={sectionRef} id='historia'>
       <div className="welcome-container">
         <div className="welcome-header">
           <span className={`welcome-tag ${revealClass} delay-1`}>BIENVENIDO</span>

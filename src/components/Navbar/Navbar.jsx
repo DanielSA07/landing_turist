@@ -18,9 +18,10 @@ function Navbar() {
         </div>
 
         <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
-          <li><a href="#inicio" onClick={() => setIsOpen(false)}>INICIO</a></li>
+          <li><a href="/" onClick={() => setIsOpen(false)}>INICIO</a></li>
           <li><a href="#historia" onClick={() => setIsOpen(false)}>HISTORIA</a></li>
           <li><a href="#experiencias" onClick={() => setIsOpen(false)}>EXPERIENCIAS</a></li>
+          <li><a href="#gastronomia" onClick={() => setIsOpen(false)}>GASTRONOMIA</a></li>
           <li><a href="#contacto" onClick={() => setIsOpen(false)}>¿COMO LLEGAR?</a></li>
         </ul>
       </div>
