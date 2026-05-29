@@ -204,18 +204,43 @@
 .delay-1 { animation-delay: 0.1s; }
 .delay-5 { animation-delay: 0.8s; }
 
-/* Mobile */
+/* ============================================================
+   RESPONSIVO CORREGIDO: TABS SIN ENCIMARSE
+   ============================================================ */
 @media (max-width: 768px) {
-  .tabs-header {
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-  }
-  .tab-btn {
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-  }
   .atractivos-section {
     padding: 60px 20px;
+  }
+
+  .tabs-header {
+    gap: 15px 25px; /* Define separación clara entre filas (15px) y columnas (25px) */
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding-bottom: 15px; /* Reducimos padding interno en mobile */
+  }
+
+  .tab-btn {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    padding: 6px 0; /* Espaciado interno más compacto para evitar colisiones */
+  }
+
+  /* REAJUSTE CRÍTICO: Modificamos el anclaje del indicador activo en mobile */
+  .tab-btn.active::after {
+    bottom: -7px; /* Sube la barra para que se alinee con la base del texto actual */
+    height: 2.5px;
+  }
+}
+
+/* Ajuste opcional para pantallas ultra pequeñas (como iPhones viejos) */
+@media (max-width: 480px) {
+  .tabs-header {
+    justify-content: space-evenly; /* Distribuye uniformemente el espacio sobrante */
+    gap: 12px 15px;
+  }
+  
+  .tab-btn {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
   }
 }
