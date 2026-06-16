@@ -10,6 +10,9 @@ function Navbar() {
         <div className="nav-logo">
           <img src="/VISITA.png" alt="Logo Tlalnepantla" />
         </div>
+        <div className='logoT'>
+          <img src="/logoT.png" alt="Logo Tlalnepantla" />
+        </div>
 
         <div className={`nav-mobile-icon ${isOpen ? 'open' : ''}`} onClick={() => setIsOpen(!isOpen)}>
           <div className={`line ${isOpen ? 'open' : ''}`}></div>
