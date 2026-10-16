@@ -2,7 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Gastronomia.css';
 
 const restaurantes = [
-  { nombre: "El Ranchito de Yulay", desc: "Ambiente acogedor, servicio rápido y precios accesibles.", link: "https://www.facebook.com/ElRanchitoDeYulay/", cat: "Familiar" },
+  { nombre: "El Ranchito de Yulay", desc: "Ambiente acogedor, servicio rápido y precios accesibles.", link: "https://www.facebook.com/ElRanchitoDeYulay/", cat: "Familiar" },  
+  { nombre: "Tacos la Güera", desc: "Arma el taqueso perfecto", link: "https://www.taquesoslaguera.com.mx/pedir", cat: "Familiar" },
+  { nombre: "Las Medulitas", desc: "Ambiente acogedor, delicias mexicanas.", link: "https://www.tripadvisor.com.mx/Restaurant_Review-g850697-d19421760-Reviews-Las_Medulitas-Tlalnepantla_Central_Mexico_and_Gulf_Coast.html3", cat: "Mexicana" },
   { nombre: "Astroboy", desc: "El mejor sabor de la galaxia.", link: "https://bio.link/soyastroboy/", cat: "Familiar" },
   { nombre: "Asador Mestizo", desc: "Su cocina mexicana atrae a clientes a la búsqueda de algo distinto", link: "https://es.restaurantguru.com/El-Guiso-Mestizo-Tlalnepantla", cat: "Mexicana" },
   { nombre: "Las Arracheras y algo más...", desc: "¡Somos expertos en la parrilla!", link: "https://lasarracheras.com/", cat: "Cortes" },
